@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="center" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.geekbrains.Controller">
+   <children>
+      <HBox fx:id="loginPanel" prefHeight="0.0" prefWidth="558.0">
+         <TextField fx:id="usernameField" alignment="BASELINE_RIGHT" onAction="#login" promptText="Введите имя пользователя" HBox.hgrow="ALWAYS">
+            <font>
+               <Font size="14.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="TEXT" />
+            </cursor>
+         </TextField>
+         <Button fx:id="sendButton" focusTraversable="false" mnemonicParsing="false" onAction="#login" prefHeight="39.0" prefWidth="83.0" text="Войти" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+            <font>
+               <Font name="Calibri" size="14.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="OPEN_HAND" />
+            </cursor>
+         </Button>
+
+      </HBox>
+      <TextArea fx:id="chatArea" focusTraversable="false" nodeOrientation="RIGHT_TO_LEFT" snapToPixel="false" VBox.vgrow="ALWAYS">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextArea>
+      <HBox fx:id="messagePanel" visible="false" managed="false" prefHeight="0.0" prefWidth="558.0">
+         <children>
+            <TextField fx:id="messageField" alignment="BASELINE_RIGHT" onAction="#clickSendButton" promptText="Введите сообщение" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Button fx:id="sendButton" focusTraversable="false" mnemonicParsing="false" onAction="#clickSendButton" prefHeight="39.0" prefWidth="83.0" text="Отправить" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+
+</VBox>
