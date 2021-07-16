@@ -8,14 +8,20 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
+
+
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/sample.fxml"));
+    public void start(Stage primaryStage) throws Exception {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample.fxml"));
+        Parent root = fxmlLoader.load();
+        Controller controller = fxmlLoader.getController();
         primaryStage.getIcons().add(new Image("/pngegg.png"));
         primaryStage.setTitle("Message List");
-        primaryStage.setScene(new Scene(root, 400, 800));
+        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setOnCloseRequest(event -> controller.exit());
         primaryStage.show();
     }
 
